@@ -17,7 +17,12 @@ def convert_currency():
         # Make the API request
         url = f"https://api.apilayer.com/exchangerates_data/convert?to={to_currency}&from={from_currency}&amount={amount}"
         payload = {}
-        headers = {"apikey": "BEvmrzSfPE5XrrqNf69LhEOYpPewZbNp"}
+        
+        # Please note that the API key have limited usage !!
+        # The API key is valid as of the time when the code was written !!
+        api_key = 'BEvmrzSfPE5XrrqNf69LhEOYpPewZbNp'
+        
+        headers = {"apikey": f"{api_key}"}
         response = requests.request("GET", url, headers=headers, data=payload)
         response.raise_for_status()
 
